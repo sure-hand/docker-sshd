@@ -9,7 +9,7 @@ How to setup:
  * Mount whatever files from the host filesystem into the user "home"
  * Expose the 22 port
 
-Additionaly, if you want to persist the log file, then you must mount it into /var/log/messages
+Additional, if you want to persist the log file, then you must mount it into /var/log/messages
  
 # Example
 
@@ -18,6 +18,7 @@ Server
 ```bash
 docker run --rm -it \
   --volume /shared/file/path:/home/ssh/data \
+  --volume /log/file/path/messages:/var/log/messages \
   --volume ~/.ssh/id_rsa.pub:/etc/ssh/authorized_keys:ro \
   -p 2222:22 docker-sshd
 ```
