@@ -8,13 +8,13 @@ HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 
-UsePrivilegeSeparation yes
+#UsePrivilegeSeparation yes
 StrictModes yes
 
-RSAAuthentication yes
+#RSAAuthentication yes
 PubkeyAuthentication yes
 IgnoreRhosts yes
-RhostsRSAAuthentication no
+#RhostsRSAAuthentication no
 HostbasedAuthentication no
 IgnoreUserKnownHosts yes
 PermitEmptyPasswords no
@@ -30,3 +30,6 @@ AllowUsers ssh
 AuthorizedKeysFile /etc/ssh/authorized_keys
 
 Subsystem sftp internal-sftp
+
+SyslogFacility AUTH
+LogLevel INFO

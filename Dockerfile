@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
 # Add openssh
-RUN apk add --no-cache openssh rsync
+RUN apk add --no-cache openssh-server
 
 # Copy sshd config
 RUN ssh-keygen -A
@@ -16,4 +16,8 @@ RUN adduser -D -g ",,," -h /home/ssh ssh && \
 
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D", "-E", "/var/log/auth.log"]
+#Adding the script which will start required processes
+ADD docker-run.sh /root/docker-run.sh
+RUN chmod +x /root/docker-run.sh
+
+CMD ["/root/docker-run.sh"]

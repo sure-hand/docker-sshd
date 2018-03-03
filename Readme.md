@@ -9,7 +9,9 @@ How to setup:
  * Mount whatever files from the host filesystem into the user "home"
  * Expose the 22 port
 
-# Exemple
+Additionaly, if you want to persist the log file, then you must mount it into /var/log/messages
+ 
+# Example
 
 Server
 
