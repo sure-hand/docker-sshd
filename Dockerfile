@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 # Add openssh
 RUN apk add --no-cache openssh-server
